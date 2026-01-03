@@ -9,7 +9,8 @@ revelar.reveal('.efeito-text', {
 
 // Animação para as tasks
 revelar.reveal('.efeito-tasks', {
-    duration: 2000,
+    duration: 3000,
     distance: '1500px',
+    delay: 500,
     origin: 'left',
 });
