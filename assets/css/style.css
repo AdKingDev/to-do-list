@@ -22,6 +22,10 @@ body {
     gap: 4rem;
 }
 
+.efeito-tasks, .efeito-text {
+    visibility: hidden;
+}
+
 .content {
     display: flex;
     flex-direction: column;
