@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+/* Cores do projeto */
 :root {
     --color-red: #FE3435;
     --color-green: #56ac01;
@@ -9,12 +10,15 @@
     --color-white: #FFFFFF;
 }
 
+/* Estilos globais */
 * {
     font-family: 'Spectral', serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/* Corpo da página */
 body {
-    background: var(--color-black);
+    background: var(--color-black) url(../images/background-todo.jpg) no-repeat center center fixed;
+    background-size: cover;
     color: var(--color-white);
     display: flex;
     flex-direction: column;
@@ -22,16 +26,23 @@ body {
     gap: 4rem;
 }
 
+h1 {
+    text-shadow: #1d1c1cde 2px 2px 4px;
+}
+
+/* Visibilidade inicial dos elementos com efeito */
 .efeito-tasks, .efeito-text {
     visibility: hidden;
 }
 
+/* Conteúdo principal */
 .content {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 }
 
+/* Área de adicionar nova tarefa */
 .content--add-item {
     display: flex;
     align-items: center;
@@ -39,18 +50,24 @@ body {
     flex-wrap: wrap;
 }
 
+/* Input e botão de adicionar tarefa */
 #input-new-task, #btn-add-task {
     border: none;
-    font-size: 1rem;
     outline: none;
     padding: 1rem;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Input nova tarefa */
 #input-new-task {
     width: 20rem;
     border-radius: 1rem;
 }
 
+/* Botão adicionar tarefa */
 #btn-add-task {
     background: var(--color-black2);
     color: var(--color-white);
@@ -60,12 +77,14 @@ body {
     cursor: pointer;
 }
 
+/* Efeito hover botão adicionar tarefa */
 #btn-add-task:hover {
     background: var(--color-white);
     color: var(--color-black);
     transition: 0.4s;
 }
 
+/* Lista de tarefas */
 #to-do-list {
     display: flex;
     flex-direction: column;
@@ -73,15 +92,18 @@ body {
     padding: 0;
 }
 
+/* Itens da lista de tarefas */
 #to-do-list > li {
     list-style-type: none;
-    font-size: 1.4rem;
+    font-size: 2rem;
     text-transform: capitalize;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-shadow: #131212c7 1px 1px 2px;
 }
 
+/* Efeito hover itens da lista de tarefas */
 #to-do-list > li:hover {
     background: var(--color-black3);
     transition: .4s;
@@ -89,6 +111,7 @@ body {
     padding-left: 1rem;
 }
 
+/* Botão de confirmar tarefa */
 #btn-ok {
     border: none;
     background: var(--color-green);
@@ -104,6 +127,7 @@ body {
     transition: .4s;
 }
 
+/* Efeito hover para remover */
 #btn-ok:hover {
     background: var(--color-red);
     color: var(--color-black);

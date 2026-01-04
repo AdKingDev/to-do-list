@@ -1,31 +1,91 @@
-@media (max-width: 767px) {
+@media (max-width: 480px) {
+    body {
+        gap: 2rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        text-align: center;
     }
 
     .content {
+        gap: 2rem;
         width: 100%;
     }
 
-    #input-new-task {
+    .content--add-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
         width: 100%;
+    }
+
+    #input-new-task, #btn-add-task {
+        width: 100%;
+        max-width: 400px;
+        box-sizing: border-box;
+        border-radius: 1rem;
         font-size: 1rem;
     }
 
     #btn-add-task {
-        width: 100%;
-        border-radius: 1rem;
-        height: auto;
-        padding: 1rem;
-    }
+        padding: 0.8rem;
+        font-size: 1.1rem;
+}
 
     #to-do-list > li {
-        font-size: 1.1rem;
+        font-size: 1rem;
         gap: 1rem;
     }
 
     #btn-ok {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    body {
+        gap: 3rem;
+        padding: 1.5rem;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    #input-new-task {
+        width: 100%;
+    }
+
+    #to-do-list > li {
+        font-size: 1.6rem;
+        color: rgb(231, 231, 231);
+    }
+}
+
+@media (pointer: coarse) {
+
+    #btn-add-task:hover,
+    #btn-ok:hover,
+    #to-do-list > li:hover {
+        background: inherit;
+        color: inherit;
+    }
+
+    #btn-add-task:active {
+        background: var(--color-white);
+        color: var(--color-black);
+    }
+
+    #btn-ok:active {
+        background: var(--color-red);
     }
 }
