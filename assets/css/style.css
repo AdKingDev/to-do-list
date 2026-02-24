@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-/* Cores do projeto */
 :root {
     --color-red: #FE3435;
     --color-green: #56ac01;
@@ -10,32 +9,29 @@
     --color-white: #FFFFFF;
 }
 
-/* Estilos globais */
 * {
     font-family: 'Spectral', serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* Corpo da página */
 body {
     background: var(--color-black) url(../images/background-todo.jpg) no-repeat center center fixed;
     background-size: cover;
     color: var(--color-white);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4rem;
+
+    overflow: hidden;
 }
 
 h1 {
     text-shadow: #1d1c1cde 2px 2px 4px;
+
+    text-align: center;
 }
 
-/* Visibilidade inicial dos elementos com efeito */
-.efeito-tasks, .efeito-text {
-    visibility: hidden;
-}
-
-/* Conteúdo principal */
 .content {
     display: flex;
     flex-direction: column;
@@ -55,15 +51,18 @@ h1 {
     border: none;
     outline: none;
     padding: 1rem;
+
     display: flex;
-    font-size: 1.5rem;
     align-items: center;
     justify-content: center;
+
+    font-size: 1.5rem;
 }
 
 /* Input nova tarefa */
 #input-new-task {
-    width: 20rem;
+    width: 30rem;
+
     border-radius: 1rem;
 }
 
@@ -71,9 +70,11 @@ h1 {
 #btn-add-task {
     background: var(--color-black2);
     color: var(--color-white);
-    border-radius: 50%;
+
     width: 50px;
     height: 50px;
+
+    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -81,6 +82,7 @@ h1 {
 #btn-add-task:hover {
     background: var(--color-white);
     color: var(--color-black);
+
     transition: 0.4s;
 }
 
@@ -97,18 +99,24 @@ h1 {
     list-style-type: none;
     font-size: 2rem;
     text-transform: capitalize;
+    color: var(--color-black3);
+    background: #ffffff36;
+    border-radius: 1rem;
+    padding: 0.3rem;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-shadow: #131212c7 1px 1px 2px;
 }
 
 /* Efeito hover itens da lista de tarefas */
 #to-do-list > li:hover {
+    color: #fff;
     background: var(--color-black3);
-    transition: .4s;
     border-radius: 1rem;
-    padding-left: 1rem;
+    padding: 0.3rem;
+
+    transition: .5s;
 }
 
 /* Botão de confirmar tarefa */
@@ -118,11 +126,14 @@ h1 {
     color: var(--color-white);
     padding: .4rem .8rem;
     border-radius: 50%;
+
     width: 50px;
     height: 50px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     cursor: pointer;
     transition: .4s;
 }
@@ -131,4 +142,26 @@ h1 {
 #btn-ok:hover {
     background: var(--color-red);
     color: var(--color-black);
+}
+
+/* Créditos */
+footer {
+    position: absolute;
+    bottom: -10px;
+
+    text-align: center;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+
+    width: 100%;
+}
+
+footer > p > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer > p > a:hover {
+    color: #000;
+    text-decoration: underline;
 }

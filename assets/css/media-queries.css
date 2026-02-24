@@ -11,6 +11,7 @@
         font-size: 1.2rem;
         text-align: center;
     }
+    
 
     .content {
         gap: 2rem;
@@ -62,12 +63,11 @@
     }
 
     #input-new-task {
-        width: 100%;
+        width: 300px;
     }
 
     #to-do-list > li {
         font-size: 1.6rem;
-        color: rgb(231, 231, 231);
     }
 }
 
