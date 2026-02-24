@@ -1,4 +1,14 @@
 const localStorageKey = 'to-do-list-morningstar';
+const input = document.getElementById('input-new-task');
+
+// Função para adicionar tarefa com o Enter
+input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // evita comportamento padrão
+
+        newTask();
+    }
+})
 
 // Função para validar se a tarefa já existe
 function validateNewTask() {
@@ -16,18 +26,28 @@ function newTask () {
     if (!input.value) {
         input.style.border = "1px solid red";
         alert("Digite algo para inserir em sua lista de tarefas!");
-    } else if (validateNewTask()) {
-        alert("Essa tarefa já existe em sua lista!");
-    } else {
-        let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
-        values.push({
-            name: input.value
-        });
-        localStorage.setItem(localStorageKey, JSON.stringify(values));
-        input.value = ""; // limpa o campo
-        showValues(); // atualiza a lista
+        input.focus(); // volta o cursor mesmo com erro
+        return;
     }
-    input.value = ''
+    
+    
+    if (validateNewTask()) {
+        alert("Essa tarefa já existe em sua lista!");
+        input.focus();
+        return;
+    }
+    
+    let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
+    
+    values.push({
+        name: input.value
+    });
+        
+    localStorage.setItem(localStorageKey, JSON.stringify(values));
+
+    input.value = "";
+    input.focus();
+    showValues(); // atualiza a lista
 }
 
 // Função para exibir as tarefas salvas
